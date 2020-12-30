@@ -1,0 +1,19 @@
+
+
+LIVE VARIABLE ANALYSIS IN LLVM
+
+
+1. To create .ll file or .bc file of a c/c++ file :
+	$ clang/clang++ -S -emit-llvm fileName.c/fileName.cpp -o fileName.ll
+	OR
+	$ clang/clang++ -S -emit-llvm fileName.c/fileName.cpp -o fileName.bc
+
+2. To build :
+	$ make
+
+3. To run the pass :
+	$ opt -instnamer -load ./LvaPass.so -LvaPass < ./tests/fileName.ll > /dev/null
+	OR
+	$ opt -instnamer -load ./LvaPass.so -LvaPass < ./tests/fileName.bc > /dev/null
+
+
